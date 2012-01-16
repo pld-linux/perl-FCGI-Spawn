@@ -7,12 +7,12 @@
 %define	pnam	Spawn
 Summary:	FCGI::Spawn - process manager/application server for FastCGI protocol
 Name:		perl-FCGI-Spawn
-Version:	0.15
+Version:	0.16.1
 Release:	1
 License:	LGPL v2.1
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/FCGI/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	a8128d47b98d269d1d3b566cadc942bd
+# Source0-md5:	a6124efd9b12f56cfe7cb9d750e7db34
 URL:		http://search.cpan.org/dist/FCGI-Spawn/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -28,7 +28,7 @@ with single input parameters like processes number and maximum
 requests per fork.
 
 %prep
-%setup -q -n %{pdir}-%{pnam}
+%setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
 %{__perl} Makefile.PL \
@@ -50,4 +50,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes README
 %{perl_vendorlib}/FCGI/*.pm
+%attr(755,root,root) %{_bindir}/fcgi_spawn
+%{_mandir}/man1/fcgi_spawn.1p*
 %{_mandir}/man3/*
