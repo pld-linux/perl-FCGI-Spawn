@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define	pdir	FCGI
 %define	pnam	Spawn
 Summary:	FCGI::Spawn - process manager/application server for FastCGI protocol
